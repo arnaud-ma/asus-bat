@@ -1,9 +1,9 @@
-.TH BAT 1 "04 March 2024" "1.1" "General Commands Manual"
+.TH asus-bat 1 "04 March 2024" "1.1" "General Commands Manual"
 .SH NAME
-bat \-\- battery management utility for Linux laptops
+asus-bat \-\- battery management utility for Linux laptops
 .SH SYNOPSIS
 .B 
-bat
+asus-bat
 [\-d | \-\-debug] [\-h | \-\-help] [\-v | \-\-version]
     <command> [<arg>]
 .SH DESCRIPTION
@@ -44,7 +44,7 @@ Print the current battery charging threshold.
 .RS
 .nf
 .PP
-$ bat threshold
+$ asus-bat threshold
 .fi
 .RE
 .PP
@@ -52,7 +52,7 @@ Set a charging threshold that will stop charging at 80%. This requires superuser
 .RS
 .nf
 .PP
-$ sudo bat threshold 80
+$ sudo asus-bat threshold 80
 .fi
 .RE
 .PP
@@ -60,7 +60,7 @@ Persist the current charging threshold setting between restarts. This also requi
 .RS
 .nf
 .PP
-$ sudo bat persist
+$ sudo asus-bat persist
 .fi
 .RE
 .SH SUPPORT

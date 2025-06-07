@@ -1,5 +1,5 @@
-bat
-!bat/
+asus-bat
+!asus-bat/
 bin/
 *.zip
 

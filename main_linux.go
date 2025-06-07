@@ -1,4 +1,4 @@
-// Binary bat is a battery management utility for Linux laptops.
+// Binary asus-bat is a battery management utility for Linux laptops.
 package main
 
 import (
@@ -45,7 +45,7 @@ var (
 
 	services = filepath.Join("/", "etc", "systemd", "system")
 
-	//go:embed bat.service
+	//go:embed asus-bat.service
 	unit string
 
 	//go:embed help.txt
@@ -102,7 +102,7 @@ func main() {
 	}
 
 	if *v || *version {
-		fmt.Printf("bat %s\nCopyright (c) 2021 Tshaka Lekholoane.\nMIT Licence.\n", tag)
+		fmt.Printf("asus-bat %s\nCopyright (c) 2021 Tshaka Lekholoane.\nMIT Licence.\n", tag)
 		return
 	}
 
@@ -253,7 +253,7 @@ func main() {
 		}
 		tmpl := template.Must(template.New("unit").Parse(unit))
 		for _, event := range available {
-			service := "bat-" + event + ".service"
+			service := "asus-bat-" + event + ".service"
 			f, err := os.Create(filepath.Join(services, service))
 			if err != nil {
 				if errors.Is(err, unix.EACCES) {
@@ -334,7 +334,7 @@ func main() {
 				panic(err)
 			}
 			fmt.Println("Charging threshold set.\n" +
-				"Run `sudo bat persist` to persist the setting between restarts.")
+				"Run `sudo asus-bat persist` to persist the setting between restarts.")
 		default:
 			fmt.Fprintln(os.Stderr, "Invalid number of arguments.")
 			flag.Usage()
@@ -342,7 +342,7 @@ func main() {
 		}
 	case "reset":
 		for _, event := range events {
-			service := "bat-" + event + ".service"
+			service := "asus-bat-" + event + ".service"
 			output, err := exec.Command("systemctl", "disable", service).CombinedOutput()
 			if err != nil {
 				// WORKAROUND: systemd returns the generic exit code 1 for all
@@ -371,7 +371,7 @@ func main() {
 	default:
 		fmt.Fprintf(
 			os.Stderr,
-			"There is no `%s` command. Run `bat --help` to see a list of available commands.\n",
+			"There is no `%s` command. Run `asus-bat --help` to see a list of available commands.\n",
 			subcommand,
 		)
 		os.Exit(1)

@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for bat
+about: Suggest an idea for asus-bat
 title: 'feat: '
 labels: enhancement
 assignees: ''

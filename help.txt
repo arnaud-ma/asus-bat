@@ -1,7 +1,7 @@
-bat - battery management utility for Linux laptops
+asus-bat - battery management utility for Linux laptops
 
 Usage:
-  bat [OPTIONS] COMMAND [arg]
+  asus-bat [OPTIONS] COMMAND [arg]
 
 Options:
   -d, --debug     Display debug information. Please use this when filing an

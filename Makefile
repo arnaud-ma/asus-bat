@@ -19,19 +19,19 @@ audit: test
 .PHONY: build 
 build: PKG := main
 build: 
-	@$(info Building bat.)
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags=$(FLAGS) -o=bin/bat .
+	@$(info Building asus-bat.)
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags=$(FLAGS) -o=bin/asus-bat .
 
 ## install: install the application
 .PHONY: install
 install: build
-	@$(info Installing bat.)
-	install bin/bat /usr/local/bin/
+	@$(info Installing asus-bat.)
+	install bin/asus-bat /usr/local/bin/
 	@$(info Installing manual page.)
-	mkdir -p /usr/local/share/man/man1 && cp bat.1 /usr/local/share/man/man1/
+	mkdir -p /usr/local/share/man/man1 && cp asus-bat.1 /usr/local/share/man/man1/
 
 ## test: run tests
 .PHONY: test
 test: build
 	@$(info Testing.)
-	bin/bat --version | grep --quiet $(TAG)
+	bin/asus-bat --version | grep --quiet $(TAG)

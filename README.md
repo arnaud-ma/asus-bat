@@ -87,7 +87,7 @@ bat threshold
 
 # Set a new charging threshold, say 80% (requires superuser
 # permissions).
-sudo bat threshold 80
+sudo asus-bat threshold 80
 
 # Persist the current charging threshold setting between restarts
 # (requires superuser permissions).

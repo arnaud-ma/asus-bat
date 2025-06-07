@@ -38,7 +38,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: Which version of bat are you running?
+      description: Which version of asus-bat are you running?
       options:
         - "1.2 (Latest)"
         - "1.1"
